@@ -15,8 +15,6 @@ function Footer({ spotify }) {
     const [{ item, playing }, dispatch] = useDataLayerValue();
     useEffect(() => {
         spotify.getMyCurrentPlaybackState().then((r) => {
-          console.log(r);
-    
           dispatch({
             type: "SET_PLAYING",
             playing: r.is_playing,
@@ -27,7 +25,7 @@ function Footer({ spotify }) {
             item: r.item,
           });
         });
-      }, [dispatch, spotify]);
+      }, [dispatch, spotify, item, playing]);
     
       const handlePlayPause = () => {
         if (playing) {

@@ -6,7 +6,6 @@ import { useDataLayerValue } from './DataLayer';
 
 function Header() {
     const [{ user }] = useDataLayerValue();
-    console.log(user);
     return (
         <div className="header">
             <div className="header__left">

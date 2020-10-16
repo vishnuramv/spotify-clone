@@ -8,7 +8,7 @@ import { getTokenFromUrl } from './spotify';
 const spotify = new SpotifyWebApi();
 
 function App() {
-	const [{ token }, dispatch] = useDataLayerValue();
+	const [{ token, playlists }, dispatch] = useDataLayerValue();
 	useEffect(() => {
 		const hash = getTokenFromUrl();
 		window.location.hash = "";
@@ -49,7 +49,7 @@ function App() {
 				spotify: spotify,
 			});
 		}
-	}, [dispatch]);
+	}, [playlists, dispatch]);
 
 	return (
 		<div className="app">
