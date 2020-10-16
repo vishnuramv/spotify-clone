@@ -1,0 +1,32 @@
+.sidebarOptions {
+    color: rgb(148, 148, 148);
+    font-weight: 500;
+    /* padding: 10px; */
+    /* min-height: 40px; */
+    cursor: pointer;
+    transition: all .2s ease;
+    display: flex;
+    align-items: center;
+}
+
+.sidebarOptions>h4 {
+    margin: 13px 0px;
+}
+
+.sidebarOptions>p {
+    margin: 0px 0px 0px 15px;
+    padding: 10px 0px;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.sidebarOptions:hover {
+    color: white;
+    background-color: rgba(128, 128, 128, 0.616);
+    border-radius: 5px;
+}
+
+.sidebarOptions__icon {
+    margin-right: 15px;
+    margin-left: 10px;
+}
