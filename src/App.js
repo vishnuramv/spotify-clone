@@ -1,11 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import SpotifyWebApi from 'spotify-web-api-js';
 import './App.css';
 import { useDataLayerValue } from './Components/DataLayer';
 import Login from './Components/Login';
 import Player from './Components/Player';
 import { getTokenFromUrl } from './spotify';
-
 const spotify = new SpotifyWebApi();
 
 function App() {
@@ -38,8 +37,19 @@ function App() {
 					discover_weekly: response,
 				})
 			});
+			spotify.getMyTopArtists().then((response) =>
+				dispatch({
+				type: "SET_TOP_ARTISTS",
+				top_artists: response,
+				})
+			);
+
+			dispatch({
+				type: "SET_SPOTIFY",
+				spotify: spotify,
+			});
 		}
-	}, []);
+	}, [dispatch]);
 
 	return (
 		<div className="app">
